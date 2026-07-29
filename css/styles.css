@@ -164,10 +164,13 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .hero__title .gold{font-style:italic;font-weight:500}
 .hero__lead{font-family:var(--font-body);font-size:clamp(1.05rem,2vw,1.2rem);color:var(--ink-soft);max-width:540px;margin:0 auto 2.1rem}
 .hero__actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.hero__scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);width:26px;height:42px;border:1px solid var(--gold-500);border-radius:14px;display:flex;justify-content:center;padding-top:8px;z-index:2;transition:opacity .3s}
-.hero__scroll:hover{opacity:.7}
-.hero__scroll span{width:3px;height:8px;border-radius:2px;background:var(--gold-500);animation:scrollDot 1.8s infinite}
-@keyframes scrollDot{0%{opacity:0;transform:translateY(-4px)}40%{opacity:1}80%{opacity:0;transform:translateY(10px)}100%{opacity:0}}
+.hero__scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.65rem;z-index:2}
+.hero__scroll-txt{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-600);transition:color .3s}
+.hero__scroll-line{position:relative;width:1px;height:48px;background:linear-gradient(var(--gold-500),rgba(192,154,69,0));overflow:hidden}
+.hero__scroll-line::after{content:"";position:absolute;top:0;left:-1.5px;width:4px;height:11px;border-radius:2px;background:var(--gold-500);animation:scrollGlide 2s cubic-bezier(.7,0,.3,1) infinite}
+.hero__scroll:hover .hero__scroll-txt{color:var(--gold-700)}
+@keyframes scrollGlide{0%{transform:translateY(-11px);opacity:0}25%{opacity:1}75%{opacity:1}100%{transform:translateY(48px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.hero__scroll-line::after{animation:none;top:6px}}
 
 /* ---------- EXPÉRIENCE ---------- */
 .experience{background:var(--cream-1)}
