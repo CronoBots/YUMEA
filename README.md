@@ -32,8 +32,8 @@ Site **one-page** immersif, pensé pour être découvert au défilement (façon 
 ├── js/main.js          # scroll reveal, nav, menu mobile, pétales
 ├── assets/
 │   ├── logo.jpeg
-│   ├── favicon.svg
-│   └── ritual-*.png    # cartes détaillées (non affichées — usage interne / futur)
+│   └── favicon.svg
+├── .nojekyll           # sert les fichiers tels quels (pas de traitement Jekyll)
 └── README.md
 ```
 
@@ -46,12 +46,25 @@ python3 -m http.server 8000
 # puis http://localhost:8000
 ```
 
-## Déploiement
+## Déploiement (GitHub Pages)
 
-Site 100 % statique — déployable tel quel sur n'importe quel hébergeur (Netlify, Vercel, GitHub Pages, OVH, o2switch…) pour le domaine **yumea-wellness.be**.
+Le site est publié via **GitHub Pages**, en mode _« Deploy from a branch »_ :
+
+- **Source** : branche `main`, dossier racine (`/`)
+- **URL** : https://cronobots.github.io/YUMEA/
+- Chaque push sur `main` redéclenche automatiquement la mise en ligne.
+
+Le fichier `.nojekyll` désactive le traitement Jekyll pour que les fichiers
+soient servis tels quels.
+
+> Pour brancher le domaine **yumea-wellness.be** : ajouter un fichier `CNAME`
+> contenant le domaine à la racine, puis configurer les DNS chez le
+> registrar (enregistrement `CNAME` → `cronobots.github.io`).
 
 ## Notes
 
-- Les images des cartes de rituels (`assets/ritual-*.png`) contiennent les protocoles détaillés et **ne sont volontairement pas affichées** sur le site public. Elles restent disponibles pour un usage interne ou une évolution future.
+- Les cartes de rituels détaillées (protocoles complets) **ne sont pas versionnées
+  dans le dépôt** : le dépôt étant public, elles resteraient téléchargeables. Elles
+  sont conservées hors dépôt pour protéger le savoir-faire de l'institut.
 - Aucun système de réservation en ligne n'est intégré : les boutons « Réserver » ouvrent l'appel téléphonique. Il pourra être branché sur un outil de prise de rendez-vous par la suite.
 - Les liens réseaux sociaux pointent vers les pages Instagram, Facebook et la recherche Google de l'institut.
