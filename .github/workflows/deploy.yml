@@ -1,0 +1,48 @@
+name: Déploiement du site (GitHub Pages)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # On ne publie que les fichiers du site public.
+      # Les cartes de rituels détaillées (assets/ritual-*.png) restent
+      # dans le dépôt mais NE sont PAS mises en ligne (protocoles privés).
+      - name: Préparer les fichiers à publier
+        run: |
+          mkdir -p _site/assets _site/css _site/js
+          cp index.html _site/
+          cp css/styles.css _site/css/
+          cp js/main.js _site/js/
+          cp assets/logo.jpeg assets/favicon.svg _site/assets/
+
+      - name: Empaqueter le site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
