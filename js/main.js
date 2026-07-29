@@ -115,6 +115,17 @@
     update();
   }
 
+  /* ---- Bouton retour en haut ---- */
+  const toTop = document.getElementById('toTop');
+  if (toTop) {
+    const toggle = () => toTop.classList.toggle('show', window.scrollY > 600);
+    window.addEventListener('scroll', toggle, { passive: true });
+    toggle();
+    toTop.addEventListener('click', () =>
+      window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' })
+    );
+  }
+
   /* ---- Current year ---- */
   const y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());

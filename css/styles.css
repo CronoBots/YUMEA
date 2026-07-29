@@ -350,6 +350,20 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .footer__col a:hover{color:#fff}
 .footer__legal{margin-top:1.8rem}
 
+/* ---------- Bouton retour en haut ---------- */
+.to-top{
+  position:fixed;right:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,2rem);z-index:45;
+  width:50px;height:50px;border-radius:50%;cursor:pointer;
+  border:1px solid rgba(205,170,92,.55);background:var(--emerald);color:var(--gold-300);
+  display:grid;place-items:center;box-shadow:0 14px 30px -12px rgba(12,42,31,.7);
+  opacity:0;visibility:hidden;transform:translateY(16px);
+  transition:opacity .4s var(--ease),transform .4s var(--ease),background .3s,color .3s,visibility .4s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--emerald-950);color:var(--gold-400);transform:translateY(-3px)}
+.to-top svg{width:44%;height:44%}
+@media (max-width:560px){.to-top{width:44px;height:44px}}
+
 /* ---------- Reveal ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.in{opacity:1;transform:none}
