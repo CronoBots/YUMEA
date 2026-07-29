@@ -88,6 +88,8 @@ b{color:var(--gold-700);font-weight:600}
   max-width:640px;margin:1.3rem auto 0;
 }
 .section{padding:clamp(4rem,9vw,7.5rem) 0;position:relative;z-index:1}
+/* Décalage pour que les ancres ne passent pas sous la barre fixe */
+section[id]:not(#hero){scroll-margin-top:84px}
 .note{margin-top:clamp(2rem,4vw,3rem);color:var(--muted);font-size:.95rem;max-width:720px;font-style:italic}
 
 /* ---------- Ornement (filet + fleur) ---------- */
@@ -312,6 +314,31 @@ b{color:var(--gold-700);font-weight:600}
 .step__body h3{font-family:var(--font-serif);font-weight:600;font-size:1.25rem;color:var(--emerald);line-height:1.2;margin-bottom:.2rem}
 .step__body p{color:var(--ink-soft);font-size:.98rem}
 
+/* ---------- AVIS (façon Trustindex) ---------- */
+.avis{background:var(--cream-1)}
+.r-stars{color:#f5a623;letter-spacing:2px;font-size:1rem;line-height:1}
+.r-stars--lg{font-size:1.4rem;letter-spacing:3px}
+
+.reviews__summary{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:1.6rem 2rem;box-shadow:0 20px 45px -32px rgba(18,58,43,.35);margin:clamp(2rem,4vw,3rem) auto 2rem;max-width:820px}
+.reviews__sumleft{display:flex;align-items:center;gap:1.2rem}
+.gwrap{flex:0 0 auto;width:52px;height:52px}
+.gwrap svg{width:100%;height:100%}
+.reviews__label{font-family:var(--font-sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.reviews__scoreline{display:flex;align-items:center;gap:.7rem;margin:.15rem 0}
+.reviews__score{font-family:var(--font-serif);font-weight:600;font-size:2.1rem;color:var(--emerald);line-height:1}
+.reviews__count{font-size:.9rem;color:var(--muted)}
+
+.reviews__grid{columns:3;column-gap:1.4rem;margin-top:.5rem}
+.review{break-inside:avoid;margin:0 0 1.4rem;background:#fff;border:1px solid var(--cream-3);border-radius:16px;padding:1.6rem 1.6rem 1.7rem;box-shadow:0 16px 38px -30px rgba(18,58,43,.35);position:relative;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.review:hover{transform:translateY(-4px);box-shadow:0 24px 46px -30px rgba(18,58,43,.45)}
+.review__g{position:absolute;top:1.3rem;right:1.3rem;width:22px;height:22px}
+.review__g svg{width:100%;height:100%}
+.review__head{display:flex;align-items:center;gap:.8rem;margin-bottom:.7rem;padding-right:1.8rem}
+.review__av{flex:0 0 auto;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--font-sans);font-weight:500;font-size:1.15rem}
+.review__name{font-family:var(--font-sans);font-weight:500;font-size:1rem;color:var(--ink)}
+.review__meta{font-size:.8rem;color:var(--muted)}
+.review__text{margin-top:.6rem;color:var(--ink-soft);font-size:1rem;line-height:1.55}
+
 /* ---------- FOOTER colonnes ---------- */
 .footer__cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:820px;margin:1.6rem auto 0;text-align:center}
 .footer__col h4{font-family:var(--font-sans);font-weight:400;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-400);margin-bottom:.6rem}
@@ -332,7 +359,7 @@ b{color:var(--gold-700);font-weight:600}
 
 /* ---------- Responsive ---------- */
 /* Nav : bascule vers le menu burger dès que les liens deviennent à l'étroit */
-@media (max-width:1080px){
+@media (max-width:1150px){
   .nav__links,.btn--nav{display:none}
   .nav__burger{display:flex}
 }
@@ -354,4 +381,10 @@ b{color:var(--gold-700);font-weight:600}
 }
 @media (min-width:901px) and (max-width:1040px){
   .benefit-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:1024px){ .reviews__grid{columns:2} }
+@media (max-width:680px){ .reviews__grid{columns:1} }
+@media (max-width:560px){
+  .reviews__summary{flex-direction:column;text-align:center}
+  .reviews__sumleft{flex-direction:column;text-align:center}
 }
