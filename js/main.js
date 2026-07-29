@@ -77,6 +77,44 @@
     setTimeout(spawn, 2000);
   }
 
+  /* ---- Univers carousel ---- */
+  const track = document.getElementById('carTrack');
+  if (track) {
+    const slides = Array.from(track.children);
+    const prev = document.getElementById('carPrev');
+    const next = document.getElementById('carNext');
+    const dotsWrap = document.getElementById('carDots');
+
+    const step = () => {
+      const first = slides[0];
+      const gap = parseFloat(getComputedStyle(track).columnGap || '0') || 0;
+      return first.getBoundingClientRect().width + gap;
+    };
+
+    prev.addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
+
+    // dots
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', 'Aller au visuel ' + (i + 1));
+      b.addEventListener('click', () => track.scrollTo({ left: step() * i, behavior: 'smooth' }));
+      dotsWrap.appendChild(b);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    const update = () => {
+      const idx = Math.round(track.scrollLeft / step());
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      prev.disabled = track.scrollLeft < 8;
+      next.disabled = track.scrollLeft > track.scrollWidth - track.clientWidth - 8;
+    };
+    track.addEventListener('scroll', () => window.requestAnimationFrame(update), { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
   /* ---- Current year ---- */
   const y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());
