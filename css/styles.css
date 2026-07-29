@@ -277,7 +277,9 @@ b{color:var(--gold-700);font-weight:600}
 .muted{color:var(--muted);font-size:.85rem}
 .socials{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap}
 .socials a{border:0!important;font-size:.98rem}
-.contact__cta{margin-top:clamp(2.5rem,5vw,3.5rem);display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.map{margin-top:clamp(2rem,4vw,3rem);border-radius:18px;overflow:hidden;border:4px solid #fff;box-shadow:0 24px 50px -30px rgba(18,58,43,.5)}
+.map iframe{display:block;width:100%;height:clamp(300px,42vw,440px);border:0}
+.contact__cta{margin-top:clamp(2rem,4vw,3rem);display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
 /* ---------- FOOTER ---------- */
 .footer{padding:clamp(3rem,7vw,5rem) 0 2.5rem;background:var(--emerald-950);color:var(--cream-1);text-align:center;position:relative;z-index:1}
