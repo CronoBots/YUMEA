@@ -6,22 +6,25 @@ Site vitrine premium pour **YUMÉA Wellness**, institut dédié au Head Spa japo
 
 ## Aperçu
 
-Site **one-page** immersif, pensé pour être découvert au défilement (façon album / slides) plutôt que lu en longs paragraphes. Design haut de gamme, épuré et chaleureux.
+Site **one-page** immersif, pensé pour être découvert au défilement (façon album / slides) plutôt que lu en longs paragraphes. Design haut de gamme, clair et chaleureux, inspiré des visuels de marque YUMÉA.
 
-- **Palette** : vert émeraude · beige naturel · détails dorés
-- **Typographies** : Cormorant Garamond (serif élégant), Jost (sans épuré), Pinyon Script (accents calligraphiés)
-- **Motifs** : fleur de cerisier (sakura) rappelant le logo, pétales dorés en animation légère
-- **Animations** : révélation au scroll, nav flottante, menu mobile
+- **Palette** : beige naturel (fond) · vert émeraude · détails dorés
+- **Typographies** : Cormorant Garamond (titres serif), EB Garamond (texte), Jost (labels/nav), Pinyon Script (accents calligraphiés)
+- **Motifs** : feuillages en filigrane, pastilles émeraude à icônes dorées, filets à petite fleur, gros titres serif avec mot doré
+- **Animations** : révélation au scroll, nav flottante, menu mobile, carrousel, feuilles en chute discrète
 
 ### Sections
 
 1. **Accueil** — logo, signature, appels à l'action
 2. **L'expérience** — l'univers YUMÉA en 3 idées
 3. **Les rituels** — SAKURA · ATSU · Enfants (nom, durée, prix, une phrase — sans dévoiler les protocoles détaillés)
-4. **La fondatrice** — Jessica Séré, sa vocation et ses spécialisations
-5. **Les bienfaits** du Head Spa
-6. **Sur-mesure** — bulle olfactive & synergie personnalisée
-7. **Contact** — adresse, rendez-vous, réseaux, itinéraire
+4. **La fondatrice** — Jessica Séré, sa vocation et ses spécialisations (photo)
+5. **Le Head Spa enfant** — accueil en douceur (photo + témoignage)
+6. **Les bienfaits** du Head Spa (6 pastilles)
+7. **Sur-mesure** — bulle olfactive & synergie personnalisée
+8. **Galerie** — carrousel des visuels de marque
+9. **Appel** — « Et si c'était maintenant ? »
+10. **Contact** — adresse, rendez-vous, réseaux, itinéraire
 
 ## Structure
 
@@ -31,9 +34,11 @@ Site **one-page** immersif, pensé pour être découvert au défilement (façon 
 ├── css/styles.css      # styles & design system
 ├── js/main.js          # scroll reveal, nav, menu mobile, pétales
 ├── assets/
-│   ├── logo.jpeg
-│   └── favicon.svg
-├── .nojekyll           # sert les fichiers tels quels (pas de traitement Jekyll)
+│   ├── logo.jpeg           # logo (médaillon du hero)
+│   ├── favicon.svg
+│   ├── jessica-enfant.jpg  # photo (fondatrice + Head Spa enfant)
+│   └── univers-*.jpg       # 6 visuels réseaux affichés dans le carrousel
+├── .nojekyll               # sert les fichiers tels quels (pas de traitement Jekyll)
 └── README.md
 ```
 

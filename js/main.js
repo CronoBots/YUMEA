@@ -64,7 +64,7 @@
       petal.style.width = size + 'px';
       petal.style.height = size + 'px';
       petal.style.animationDuration = 9 + Math.random() * 9 + 's';
-      petal.style.opacity = String(0.25 + Math.random() * 0.35);
+      petal.style.opacity = String(0.06 + Math.random() * 0.1);
       layer.appendChild(petal);
       setTimeout(() => petal.remove(), 20000);
     };
