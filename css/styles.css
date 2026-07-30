@@ -346,10 +346,11 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .brand+.brand{margin-top:clamp(3rem,6vw,5rem)}
 .brand--rev .brand__media{order:2}
 .brand__media > .photo{aspect-ratio:1;max-width:360px;margin:0 auto}
-/* Galerie Nougatine : collage — grande photo à gauche, deux plus petites empilées à droite */
-.brand__gallery{display:grid;grid-template-columns:1.25fr 1fr;gap:.7rem;width:min(100%,400px);justify-self:center;margin:0;align-items:stretch}
-.brand__gallery .photo{aspect-ratio:4/5}
-.brand__gallery .photo--main{grid-row:1 / span 2;aspect-ratio:auto;height:100%}
+/* Galerie Nougatine : collage robuste — grande photo à gauche, deux empilées à droite.
+   Hauteur définie via aspect-ratio -> lignes de hauteur fixe (compatible Safari iOS). */
+.brand__gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:.5rem;width:min(100%,420px);aspect-ratio:6/5;justify-self:center;margin:0}
+.brand__gallery .photo{width:100%;height:100%;aspect-ratio:auto}
+.brand__gallery .photo--main{grid-row:1 / span 2}
 .brand__tag{font-family:var(--font-sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-600);margin-bottom:.5rem}
 .brand__title{font-family:var(--font-serif);font-weight:600;font-size:clamp(1.7rem,3vw,2.3rem);color:var(--emerald);line-height:1.12}
 .brand__intro{color:var(--ink-soft);margin:.9rem 0 1.4rem;max-width:52ch}
