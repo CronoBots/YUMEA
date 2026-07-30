@@ -174,27 +174,12 @@ section[id]:not(#hero){scroll-margin-top:84px}
 @keyframes scrollGlide{0%{transform:translateY(-11px);opacity:0}25%{opacity:1}75%{opacity:1}100%{transform:translateY(48px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.hero__scroll-line::after{animation:none;top:6px}}
 
-/* ---------- L'INSTITUT (bandeau immersif) ---------- */
-.institut{position:relative;min-height:clamp(420px,72svh,660px);display:flex;align-items:flex-end;justify-content:center;overflow:hidden;z-index:1}
+/* ---------- L'INSTITUT (photo encadrée, entièrement visible) ---------- */
+.institut{background:var(--cream-2)}
 .brand--hair .brand__media > .photo{aspect-ratio:2/3;max-width:400px}
-.institut__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
-.institut__scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,35,26,.1) 0%,rgba(6,35,26,0) 40%,rgba(6,35,26,.55) 78%,rgba(6,35,26,.8) 100%)}
-.institut__caption{position:relative;z-index:2;text-align:center;padding-bottom:clamp(2rem,5vw,3.2rem);padding-top:2rem;max-width:760px}
-.institut__caption .eyebrow{color:var(--gold-300)}
-.institut__sub{font-family:var(--font-body);font-style:italic;font-weight:400;font-size:clamp(1.15rem,2.6vw,1.7rem);color:#fbf3e0;margin:.1rem auto 1.4rem;line-height:1.4;text-shadow:0 2px 18px rgba(0,0,0,.6)}
-.btn--onphoto{background:rgba(255,255,255,.12);border-color:rgba(231,211,161,.7);color:#fff;-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
-.btn--onphoto:hover{background:var(--gold-500);border-color:var(--gold-500);color:var(--emerald-950);transform:translateY(-2px)}
-/* Mobile : photo de l'institut entièrement visible, légende sobre placée en dessous */
-@media (max-width:760px){
-  .institut{min-height:0;display:block;align-items:stretch;background:var(--cream-2)}
-  .institut__img{position:static;width:100%;height:auto;display:block}
-  .institut__scrim{display:none}
-  .institut__caption{position:static;max-width:none;padding:1.6rem 1.25rem 2.2rem}
-  .institut__caption .eyebrow{color:var(--gold-600)}
-  .institut__sub{color:var(--emerald);text-shadow:none;margin:.3rem auto 1.2rem}
-  .institut .btn--onphoto{background:var(--emerald);color:var(--cream-1);border-color:var(--emerald);-webkit-backdrop-filter:none;backdrop-filter:none}
-  .institut .btn--onphoto:hover{background:var(--emerald-950);color:var(--cream-1)}
-}
+.institut__frame{max-width:1000px;margin:clamp(2rem,4vw,3rem) auto 0;border-radius:20px;overflow:hidden;border:4px solid #fff;box-shadow:0 34px 70px -34px rgba(18,58,43,.55)}
+.institut__frame img{width:100%;height:auto;display:block}
+.institut__cta{margin-top:clamp(1.6rem,3vw,2.2rem)}
 
 /* ---------- EXPÉRIENCE ---------- */
 .experience{background:var(--cream-1)}
