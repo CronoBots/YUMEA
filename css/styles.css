@@ -150,7 +150,8 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .drawer__links{display:flex;flex-direction:column;gap:1.4rem;text-align:center}
 .drawer__links a{font-family:var(--font-serif);font-size:1.6rem;color:var(--emerald)}
 .drawer__links a:hover{color:var(--gold-700)}
-.drawer__cta{font-family:var(--font-sans);font-size:.8rem;margin-top:1rem}
+.drawer__links a.drawer__cta{font-family:var(--font-sans);font-size:.8rem;margin-top:1rem;color:var(--cream-1)}
+.drawer__links a.drawer__cta:hover{color:var(--cream-1)}
 
 /* ---------- HERO ---------- */
 .hero{
@@ -319,7 +320,10 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .footer__sub{font-family:var(--font-sans);font-size:.62rem;letter-spacing:.5em;text-transform:uppercase;color:var(--cream-3);margin-top:4px}
 .footer__tag{font-size:1.7rem;color:var(--gold-400);margin:.7rem 0 1.4rem}
 .footer__meta{color:var(--cream-2);font-size:.92rem}
-.footer__legal{color:var(--muted);font-size:.78rem;margin-top:.8rem}
+.footer__legal{color:var(--muted);font-size:.78rem;margin-top:1.4rem}
+.footer__socials{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap}
+.footer__socials a{font-family:var(--font-sans);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-300);transition:color .3s}
+.footer__socials a:hover{color:#fff}
 
 /* ---------- Note ATSU dans la carte ---------- */
 .card__note{font-family:var(--font-body);font-style:italic;font-size:.94rem;color:var(--ink-soft);margin:-.7rem 0 1.2rem}
