@@ -62,7 +62,7 @@ python3 -m http.server 8000
 Le site est publié via **GitHub Pages**, en mode _« Deploy from a branch »_ :
 
 - **Source** : branche `main`, dossier racine (`/`)
-- **URL** : https://cronobots.github.io/YUMEA/
+- **URL** : https://yumea-wellness.be/
 - Chaque push sur `main` redéclenche automatiquement la mise en ligne.
 
 Le fichier `.nojekyll` désactive le traitement Jekyll pour que les fichiers

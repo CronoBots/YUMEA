@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cronobots.github.io/YUMEA/sitemap.xml
+Sitemap: https://yumea-wellness.be/sitemap.xml
