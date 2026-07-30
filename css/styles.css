@@ -226,6 +226,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .photo__caption small{display:block;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-600);margin-top:.4rem}
 .pills{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
 .pills li{font-family:var(--font-sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald);border:1px solid var(--gold-400);background:rgba(205,170,92,.08);padding:.5em 1em;border-radius:999px}
+.pills--center{justify-content:center}
 
 /* ---------- HEAD SPA ENFANT ---------- */
 .enfants{background:var(--cream-1)}
