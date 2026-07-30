@@ -15,16 +15,22 @@ Site **one-page** immersif, pensé pour être découvert au défilement (façon 
 
 ### Sections
 
+Le fil de lecture suit une logique simple — _c'est quoi → pourquoi → la carte →
+fait pour vous → comment → qui → où → preuves → réserver_ :
+
 1. **Accueil** — logo, signature, appels à l'action
-2. **L'expérience** — l'univers YUMÉA en 3 idées
-3. **Les rituels** — SAKURA · ATSU · Enfants (nom, durée, prix, une phrase — sans dévoiler les protocoles détaillés)
-4. **La fondatrice** — Jessica Séré, sa vocation et ses spécialisations (photo)
-5. **Le Head Spa enfant** — accueil en douceur (photo + témoignage)
-6. **Les bienfaits** du Head Spa (6 pastilles)
-7. **Sur-mesure** — bulle olfactive & synergie personnalisée
-8. **Galerie** — carrousel des visuels de marque
-9. **Appel** — « Et si c'était maintenant ? »
-10. **Contact** — adresse, rendez-vous, réseaux, itinéraire
+2. **Le Head Spa** — ce que c'est, en une idée intuitive
+3. **Les bienfaits** — pour le cheveu, le cuir chevelu… et l'esprit
+4. **Les rituels** — SAKURA · ATSU · Enfants (sans dévoiler les protocoles détaillés)
+5. **Sur-mesure** — bulle olfactive & synergie personnalisée
+6. **Le déroulé** — le rituel en 4 temps (évocateur, sans livrer le savoir-faire)
+7. **La fondatrice** — sa vocation et ses spécialisations (photo)
+8. **L'institut** — le havre de paix à Flémalle (photo)
+9. **Le Head Spa enfant** — accueil en douceur (photo + témoignage)
+10. **Nos gammes** — 1944 Paris · Hairborist · Nougatine (teasers courts)
+11. **Avis** — les avis Google vérifiés
+12. **Réservation** — formulaire de demande de rendez-vous
+13. **Contact** — adresse, horaires, réseaux, itinéraire
 
 ## Structure
 
