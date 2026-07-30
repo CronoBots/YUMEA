@@ -447,6 +447,9 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .petals{display:none}
   .leafbg::before,.leafbg::after{display:none}
   .reveal{opacity:1;transform:none;transition:none}
+  /* Boutons de réservation : empilés, pleine largeur, alignés */
+  .resa__actions{flex-direction:column;align-items:stretch}
+  .resa__actions .btn{width:100%;justify-content:center}
 }
 @media (min-width:901px) and (max-width:1040px){
   .benefit-grid{grid-template-columns:repeat(2,1fr)}
