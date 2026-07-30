@@ -37,8 +37,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+html{overflow-x:clip}
 
 body{
   font-family:var(--font-body);
@@ -48,7 +47,6 @@ body{
   line-height:1.65;
   font-size:1.06rem;
   -webkit-font-smoothing:antialiased;
-  overflow-x:hidden;
 }
 
 img{max-width:100%;display:block}
@@ -447,8 +445,10 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .enfants__item{text-align:left}
   .carousel__nav{display:none}
   .carousel{padding:0 1rem}
-  /* Perf mobile : on coupe la couche de feuilles animées (source de saccades au scroll) */
+  /* Perf mobile : alléger la peinture pour un scroll fluide */
   .petals{display:none}
+  .leafbg::before,.leafbg::after{display:none}
+  .reveal{opacity:1;transform:none;transition:none}
 }
 @media (min-width:901px) and (max-width:1040px){
   .benefit-grid{grid-template-columns:repeat(2,1fr)}

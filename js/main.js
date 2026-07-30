@@ -31,6 +31,18 @@
     a.addEventListener('click', () => toggleDrawer(false))
   );
 
+  /* ---- Smooth scroll on anchor links (JS only, so touch scrolling stays native) ---- */
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href');
+      if (!id || id.length < 2) return;
+      const target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll('.reveal');
   if (prefersReduced || !('IntersectionObserver' in window)) {
