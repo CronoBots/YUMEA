@@ -189,10 +189,6 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .feature h3{font-family:var(--font-serif);font-weight:600;font-size:1.55rem;color:var(--emerald);margin-bottom:.5rem}
 .feature p{color:var(--ink-soft);font-size:1rem}
 
-/* ---------- CITATION ---------- */
-.quote{padding:clamp(4rem,9vw,7rem) 0;background:var(--cream-2)}
-.quote__text{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.32;color:var(--emerald);max-width:840px;margin:0 auto}
-.quote__by{margin-top:1.4rem;font-family:var(--font-sans);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-600)}
 
 /* ---------- RITUELS ---------- */
 .rituels{background:var(--cream-1)}
@@ -273,12 +269,6 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .carousel__dots button{width:8px;height:8px;padding:0;border-radius:50%;border:0;cursor:pointer;background:var(--cream-3);transition:all .35s var(--ease)}
 .carousel__dots button.active{background:var(--gold-500);width:22px;border-radius:5px}
 
-/* ---------- APPEL FINAL ---------- */
-.cta{padding:clamp(4.5rem,9vw,8rem) 0;background:radial-gradient(120% 90% at 50% 20%, #fbf6ec, var(--cream-2));text-align:center}
-.cta__lead{font-family:var(--font-serif);font-size:clamp(1.6rem,3.6vw,2.6rem);color:var(--emerald);line-height:1.2}
-.cta__sub{color:var(--ink-soft);font-style:italic;margin-top:1rem;font-size:1.15rem}
-.cta__title{font-family:var(--font-serif);font-weight:600;font-size:clamp(2.2rem,6vw,4rem);color:var(--emerald);margin:.6rem 0 2rem}
-.cta__title em{color:var(--gold-600);font-style:italic;font-weight:500}
 
 /* ---------- RÉSERVATION ---------- */
 .reservation{background:var(--cream-2)}
@@ -335,13 +325,6 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .card__note{font-family:var(--font-body);font-style:italic;font-size:.94rem;color:var(--ink-soft);margin:-.7rem 0 1.2rem}
 .card__note i{color:var(--gold-700);font-style:italic}
 
-/* ---------- CE QUE VOUS ALLEZ RESSENTIR ---------- */
-.ressenti{background:var(--cream-1)}
-.ressenti__row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.5rem,3vw,2.5rem);margin-top:clamp(2.5rem,5vw,3.5rem)}
-.ressenti__item{text-align:center;padding:1rem}
-.ressenti__item .badge{margin:0 auto 1rem}
-.ressenti__item p{font-family:var(--font-serif);font-size:1.28rem;color:var(--emerald);line-height:1.35}
-.ressenti__item b{color:var(--gold-700);font-weight:600}
 
 /* ---------- LE DÉROULÉ ---------- */
 .deroule{background:var(--cream-2)}
@@ -443,7 +426,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .hero__scroll{display:none}
 }
 @media (max-width:900px){
-  .feature-row,.cards,.benefit-grid,.contact-grid,.duo,.steps,.ressenti__row,.footer__cols,.brand,.resa,.field-row{grid-template-columns:1fr}
+  .feature-row,.cards,.benefit-grid,.contact-grid,.duo,.steps,.footer__cols,.brand,.resa,.field-row{grid-template-columns:1fr}
   .brand--rev .brand__media{order:-1}
   .brand__media > .photo{max-width:340px;aspect-ratio:4/5}
   .brand__gallery{width:min(100%,340px)}
