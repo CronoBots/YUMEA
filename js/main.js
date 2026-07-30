@@ -138,6 +138,97 @@
     );
   }
 
+  /* ---- Reservation module ---- */
+  const resaForm = document.getElementById('resaForm');
+  if (resaForm) {
+    const openDays = [1, 2, 3, 4, 5]; // lundi → vendredi
+    const now = new Date();
+
+    // Highlight today + open/closed status
+    const dow = now.getDay();
+    document.querySelectorAll('#hoursList li').forEach((li) => {
+      if (Number(li.dataset.day) === dow) li.classList.add('is-today');
+    });
+    const statusEl = document.getElementById('openStatus');
+    if (statusEl) {
+      const openNow = openDays.includes(dow) && now.getHours() >= 9 && now.getHours() < 18;
+      statusEl.textContent = openNow ? 'Ouvert maintenant' : 'Fermé actuellement · sur rendez-vous';
+      statusEl.classList.toggle('is-open', openNow);
+    }
+
+    // Build time slots 09:00 → 17:30
+    const timeSel = document.getElementById('f-time');
+    for (let m = 9 * 60; m <= 17 * 60 + 30; m += 30) {
+      const hh = String(Math.floor(m / 60)).padStart(2, '0');
+      const mm = String(m % 60).padStart(2, '0');
+      const o = document.createElement('option');
+      o.value = o.textContent = `${hh}:${mm}`;
+      timeSel.appendChild(o);
+    }
+
+    // Date: min today, block weekends
+    const dateEl = document.getElementById('f-date');
+    const note = document.getElementById('resaNote');
+    const pad = (n) => String(n).padStart(2, '0');
+    dateEl.min = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+    const isWeekend = (val) => {
+      if (!val) return false;
+      const wd = new Date(val + 'T12:00:00').getDay();
+      return wd === 0 || wd === 6;
+    };
+    const showNote = (msg) => { note.hidden = false; note.textContent = msg; };
+    dateEl.addEventListener('change', () => {
+      if (isWeekend(dateEl.value)) showNote("L'institut est fermé le week-end. Merci de choisir un jour du lundi au vendredi.");
+      else note.hidden = true;
+    });
+
+    const val = (id) => document.getElementById(id).value.trim();
+    const buildText = () =>
+      `Bonjour, je souhaite réserver un rendez-vous chez YUMÉA Wellness.\n\n` +
+      `• Rituel : ${val('f-rituel')}\n` +
+      `• Date souhaitée : ${val('f-date')}\n` +
+      `• Créneau : ${val('f-time')}\n` +
+      `• Nom : ${val('f-name')}\n` +
+      `• Téléphone : ${val('f-phone')}` +
+      (val('f-email') ? `\n• E-mail : ${val('f-email')}` : '') +
+      (val('f-msg') ? `\n• Message : ${val('f-msg')}` : '');
+
+    const isValid = () => {
+      if (!val('f-rituel') || !val('f-date') || !val('f-time') || !val('f-name') || !val('f-phone')) {
+        showNote('Merci de renseigner le rituel, la date, le créneau, votre nom et votre téléphone.');
+        return false;
+      }
+      if (isWeekend(val('f-date'))) {
+        showNote("L'institut est fermé le week-end. Merci de choisir un jour du lundi au vendredi.");
+        return false;
+      }
+      note.hidden = true;
+      return true;
+    };
+
+    document.getElementById('sendWa').addEventListener('click', () => {
+      if (!isValid()) return;
+      window.open('https://wa.me/32498691136?text=' + encodeURIComponent(buildText()), '_blank', 'noopener');
+    });
+    document.getElementById('sendMail').addEventListener('click', () => {
+      if (!isValid()) return;
+      const subject = 'Demande de rendez-vous — ' + val('f-rituel');
+      window.location.href =
+        'mailto:contact@yumea-wellness.be?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(buildText());
+    });
+
+    // Pre-select ritual when arriving from a ritual card
+    document.querySelectorAll('[data-rituel]').forEach((a) => {
+      a.addEventListener('click', () => {
+        const sel = document.getElementById('f-rituel');
+        const key = a.dataset.rituel.toLowerCase();
+        Array.from(sel.options).forEach((o) => {
+          if (o.textContent.toLowerCase().includes(key)) sel.value = o.value;
+        });
+      });
+    });
+  }
+
   /* ---- Current year ---- */
   const y = document.getElementById('year');
   if (y) y.textContent = String(new Date().getFullYear());

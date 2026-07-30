@@ -87,7 +87,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a href="tel:+32498691136" class="btn btn--nav">Réserver</a>
+      <a href="#reservation" class="btn btn--nav">Réserver</a>
 
       <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -106,7 +106,7 @@
       <a href="#produits">Produits</a>
       <a href="#avis">Avis</a>
       <a href="#contact">Contact</a>
-      <a href="tel:+32498691136" class="btn btn--primary drawer__cta">Réserver</a>
+      <a href="#reservation" class="btn btn--primary drawer__cta">Réserver</a>
     </nav>
   </div>
 
@@ -121,7 +121,7 @@
         <p class="hero__lead">Institut dédié au Head&nbsp;Spa japonais, au bien-être et aux soins du visage et du cuir chevelu.</p>
         <div class="hero__actions">
           <a href="#rituels" class="btn btn--primary">Découvrir les rituels</a>
-          <a href="tel:+32498691136" class="btn btn--ghost">Prendre rendez-vous</a>
+          <a href="#reservation" class="btn btn--ghost">Prendre rendez-vous</a>
         </div>
       </div>
       <a href="#experience" class="hero__scroll" aria-label="Faire défiler vers le contenu">
@@ -201,7 +201,7 @@
           <span class="card__pill">50 min — 80€</span>
           <p class="card__desc">L'invitation idéale pour découvrir le Head&nbsp;Spa japonais et s'offrir une parenthèse de douceur.</p>
           <ul class="card__tags"><li>Massage ciblé</li><li>Cuir chevelu</li><li>Fumigation</li></ul>
-          <a href="tel:+32498691136" class="card__link">Réserver ce rituel →</a>
+          <a href="#reservation" data-rituel="SAKURA" class="card__link">Réserver ce rituel →</a>
         </article>
 
         <article class="card card--feature reveal">
@@ -212,7 +212,7 @@
           <p class="card__desc">Le rituel complet, pour une détente profonde du corps, du visage et de l'esprit.</p>
           <p class="card__note">« Atsu » (圧) — <i>pression profonde</i>, inspirée du shiatsu.</p>
           <ul class="card__tags"><li>Soin visage complet</li><li>Massage relaxant</li><li>Masque au karité</li></ul>
-          <a href="tel:+32498691136" class="card__link">Réserver ce rituel →</a>
+          <a href="#reservation" data-rituel="ATSU" class="card__link">Réserver ce rituel →</a>
         </article>
 
         <article class="card reveal">
@@ -221,7 +221,7 @@
           <span class="card__pill">30–60 min — dès 40€</span>
           <p class="card__desc">Un moment tout en douceur pour découvrir le bien-être… comme les grands.</p>
           <ul class="card__tags"><li>Soin visage</li><li>Head Spa enfant</li><li>Rituel Kuromi</li></ul>
-          <a href="tel:+32498691136" class="card__link">Réserver ce rituel →</a>
+          <a href="#reservation" data-rituel="enfant" class="card__link">Réserver ce rituel →</a>
         </article>
       </div>
 
@@ -536,7 +536,67 @@
         <p class="cta__lead reveal">Si vous êtes arrivé·e jusqu'ici…<br /><span class="gold">ce n'est sûrement pas un hasard.</span></p>
         <p class="cta__sub reveal">Il y a des moments qu'on ne devrait pas repousser.</p>
         <h2 class="cta__title reveal">Et si c'était <em>maintenant</em> ?</h2>
-        <a href="tel:+32498691136" class="btn btn--primary btn--lg reveal">Réserver mon moment</a>
+        <a href="#reservation" class="btn btn--primary btn--lg reveal">Réserver mon moment</a>
+      </div>
+    </section>
+
+    <!-- ===== RÉSERVATION ===== -->
+    <section class="section reservation leafbg" id="reservation">
+      <div class="container center">
+        <p class="eyebrow reveal">Réservation</p>
+        <h2 class="display reveal">Réservez votre <span class="gold">moment</span></h2>
+        <div class="ornament reveal"><span class="orn-line"></span><span class="orn-mark">❋</span><span class="orn-line"></span></div>
+        <p class="lede reveal">Uniquement sur rendez-vous. Indiquez le rituel et le créneau souhaités&nbsp;: Jessica vous recontacte pour confirmer.</p>
+      </div>
+
+      <div class="container resa">
+        <aside class="resa__hours reveal">
+          <h3>Horaires</h3>
+          <ul class="hours" id="hoursList">
+            <li data-day="1"><span>Lundi</span><span>09:00 – 18:00</span></li>
+            <li data-day="2"><span>Mardi</span><span>09:00 – 18:00</span></li>
+            <li data-day="3"><span>Mercredi</span><span>09:00 – 18:00</span></li>
+            <li data-day="4"><span>Jeudi</span><span>09:00 – 18:00</span></li>
+            <li data-day="5"><span>Vendredi</span><span>09:00 – 18:00</span></li>
+            <li data-day="6" class="is-closed"><span>Samedi</span><span>Fermé</span></li>
+            <li data-day="0" class="is-closed"><span>Dimanche</span><span>Fermé</span></li>
+          </ul>
+          <p class="resa__status" id="openStatus"></p>
+          <div class="resa__quick">
+            <a href="tel:+32498691136" class="btn btn--ghost">Appeler</a>
+            <a href="https://wa.me/32498691136" target="_blank" rel="noopener" class="btn btn--primary">WhatsApp</a>
+          </div>
+        </aside>
+
+        <form class="resa__form reveal" id="resaForm" novalidate>
+          <div class="field">
+            <label for="f-rituel">Rituel souhaité</label>
+            <select id="f-rituel" required>
+              <option value="" disabled selected>Choisir un rituel…</option>
+              <option>Rituel SAKURA — 50 min · 80€</option>
+              <option>Rituel ATSU — 90 min · 130€</option>
+              <option>Rituel enfant</option>
+              <option>Head Spa / soin sur-mesure</option>
+              <option>Je ne sais pas encore</option>
+            </select>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="f-date">Date souhaitée</label><input type="date" id="f-date" required /></div>
+            <div class="field"><label for="f-time">Créneau souhaité</label><select id="f-time" required><option value="" disabled selected>Heure…</option></select></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="f-name">Prénom &amp; nom</label><input type="text" id="f-name" autocomplete="name" required /></div>
+            <div class="field"><label for="f-phone">Téléphone</label><input type="tel" id="f-phone" autocomplete="tel" required /></div>
+          </div>
+          <div class="field"><label for="f-email">E-mail <span class="opt">(facultatif)</span></label><input type="email" id="f-email" autocomplete="email" /></div>
+          <div class="field"><label for="f-msg">Message <span class="opt">(facultatif)</span></label><textarea id="f-msg" rows="3"></textarea></div>
+          <p class="resa__note" id="resaNote" role="alert" hidden></p>
+          <div class="resa__actions">
+            <button type="button" class="btn btn--primary btn--lg" id="sendWa">Envoyer via WhatsApp</button>
+            <button type="button" class="btn btn--ghost btn--lg" id="sendMail">Envoyer par e-mail</button>
+          </div>
+          <p class="resa__legal">Il s'agit d'une <b>demande</b> de rendez-vous, pas d'une confirmation. Jessica vous recontacte rapidement pour valider le créneau.</p>
+        </form>
       </div>
     </section>
 

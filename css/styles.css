@@ -280,6 +280,32 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .cta__title{font-family:var(--font-serif);font-weight:600;font-size:clamp(2.2rem,6vw,4rem);color:var(--emerald);margin:.6rem 0 2rem}
 .cta__title em{color:var(--gold-600);font-style:italic;font-weight:500}
 
+/* ---------- RÉSERVATION ---------- */
+.reservation{background:var(--cream-2)}
+.resa{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(1.4rem,3vw,2.2rem);margin-top:clamp(2.5rem,5vw,3.5rem);align-items:start}
+.resa__hours,.resa__form{background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:clamp(1.5rem,3vw,2.1rem);box-shadow:0 20px 45px -32px rgba(18,58,43,.35)}
+.resa__hours h3{font-family:var(--font-serif);font-weight:600;font-size:1.4rem;color:var(--emerald);margin-bottom:1rem}
+.hours{list-style:none;display:flex;flex-direction:column;gap:.15rem}
+.hours li{display:flex;justify-content:space-between;gap:1rem;font-size:.96rem;color:var(--ink-soft);padding:.4rem .6rem;border-radius:8px}
+.hours li.is-today{background:rgba(205,170,92,.16);color:var(--emerald);font-weight:600}
+.hours li.is-closed{color:var(--muted)}
+.resa__status{margin-top:1.1rem;font-family:var(--font-sans);font-size:.82rem;letter-spacing:.04em;color:var(--muted);display:flex;align-items:center;gap:.5rem}
+.resa__status::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.resa__status.is-open{color:#2e7d32}
+.resa__quick{display:flex;gap:.6rem;margin-top:1.3rem}
+.resa__quick .btn{flex:1;padding:.7em 1em;font-size:.72rem}
+.resa__form .field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.resa__form label{font-family:var(--font-sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.resa__form label .opt{text-transform:none;letter-spacing:0;color:var(--muted)}
+.resa__form input,.resa__form select,.resa__form textarea{font-family:var(--font-body);font-size:1rem;color:var(--ink);background:var(--cream-1);border:1px solid var(--cream-3);border-radius:10px;padding:.72em .9em;transition:border-color .3s,box-shadow .3s;width:100%}
+.resa__form textarea{resize:vertical;min-height:80px}
+.resa__form input:focus,.resa__form select:focus,.resa__form textarea:focus{outline:none;border-color:var(--gold-500);box-shadow:0 0 0 3px rgba(201,154,69,.15)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.resa__note{background:rgba(201,154,69,.12);border:1px solid var(--gold-400);color:var(--gold-700);border-radius:10px;padding:.7em .9em;font-size:.9rem;margin-bottom:1rem}
+.resa__actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.3rem}
+.resa__legal{margin-top:1.1rem;font-size:.82rem;color:var(--muted);line-height:1.5}
+.resa__legal b{color:var(--ink-soft);font-weight:600}
+
 /* ---------- CONTACT ---------- */
 .contact{background:var(--cream-1)}
 .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.25rem,2.5vw,2rem);margin-top:clamp(2.5rem,5vw,3.5rem)}
@@ -417,7 +443,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .hero__scroll{display:none}
 }
 @media (max-width:900px){
-  .feature-row,.cards,.benefit-grid,.contact-grid,.duo,.steps,.ressenti__row,.footer__cols,.brand{grid-template-columns:1fr}
+  .feature-row,.cards,.benefit-grid,.contact-grid,.duo,.steps,.ressenti__row,.footer__cols,.brand,.resa,.field-row{grid-template-columns:1fr}
   .brand--rev .brand__media{order:-1}
   .brand__media > .photo{max-width:340px;aspect-ratio:4/5}
   .brand__gallery{width:min(100%,340px)}
