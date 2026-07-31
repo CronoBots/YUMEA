@@ -226,6 +226,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .photo--portrait{aspect-ratio:4/5;max-width:440px;margin:0 auto}
 .partage__photo{aspect-ratio:3/4;max-width:440px;margin:0 auto}
 .partage__note{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--gold-700);margin-top:1.6rem}
+.cadeaux__photo{max-width:340px;aspect-ratio:9/16;margin:clamp(2rem,4vw,2.6rem) auto 0}
 .cadeaux__cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:clamp(2.5rem,5vw,3.2rem)}
 .cadeaux .note{margin-top:1.3rem}
 .photo__caption{text-align:center;margin-top:1.2rem;font-family:var(--font-serif);font-size:1.5rem;color:var(--emerald)}
@@ -290,8 +291,9 @@ section[id]:not(#hero){scroll-margin-top:84px}
 
 /* ---------- RÉSERVATION ---------- */
 .reservation{background:var(--cream-2)}
-.resa{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(1.4rem,3vw,2.2rem);margin-top:clamp(2.5rem,5vw,3.5rem);align-items:start}
+.resa{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(1.4rem,3vw,2.2rem);margin-top:clamp(2.5rem,5vw,3.5rem);align-items:stretch}
 .resa__hours,.resa__form{background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:clamp(1.5rem,3vw,2.1rem);box-shadow:0 20px 45px -32px rgba(18,58,43,.35)}
+.resa__hours{display:flex;flex-direction:column}
 .resa__hours h3{font-family:var(--font-serif);font-weight:600;font-size:1.4rem;color:var(--emerald);margin-bottom:1rem}
 .hours{list-style:none;display:flex;flex-direction:column;gap:.15rem}
 .hours li{display:flex;justify-content:space-between;gap:1rem;font-size:.96rem;color:var(--ink-soft);padding:.4rem .6rem;border-radius:8px}
@@ -311,7 +313,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .resa__note{background:rgba(201,154,69,.12);border:1px solid var(--gold-400);color:var(--gold-700);border-radius:10px;padding:.7em .9em;font-size:.9rem;margin-bottom:1rem}
 .resa__actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.3rem}
-@media (min-width:901px){.resa__actions .btn{flex:1 1 0}}
+@media (min-width:901px){.resa__actions .btn{flex:1 1 0}.resa__quick{margin-top:auto}}
 .resa__legal{margin-top:1.1rem;font-size:.82rem;color:var(--muted);line-height:1.5}
 .resa__legal b{color:var(--ink-soft);font-weight:600}
 
