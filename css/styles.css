@@ -128,8 +128,8 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .btn--nav:hover{background:var(--emerald-950)}
 
 /* ---------- NAV ---------- */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:.5rem 0;transition:background .5s var(--ease),box-shadow .5s var(--ease)}
-.nav.scrolled{background:rgba(246,240,228,.97);box-shadow:0 1px 0 var(--cream-3)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:.5rem 0;transform:translateZ(0);-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:background .4s var(--ease),box-shadow .4s var(--ease)}
+.nav.scrolled{background:rgb(246,240,228);box-shadow:0 1px 0 var(--cream-3)}
 .nav__inner{width:100%;max-width:var(--maxw);margin:0 auto;padding:.9rem clamp(1.25rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;gap:1rem}
 .nav__brand{display:flex;flex-direction:column;line-height:1}
 .nav__brand-name{font-family:var(--font-serif);font-weight:600;font-size:1.5rem;letter-spacing:.18em;color:var(--emerald)}
@@ -450,6 +450,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .petals{display:none}
   .leafbg::before,.leafbg::after{display:none}
   .reveal{opacity:1;transform:none;transition:none}
+  .hero__scroll-line::after{animation:none}
   /* Boutons de réservation : empilés, pleine largeur, alignés */
   .resa__actions{flex-direction:column;align-items:stretch}
   .resa__actions .btn{width:100%;justify-content:center}

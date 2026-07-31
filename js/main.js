@@ -6,14 +6,24 @@
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- Sticky nav shadow on scroll ---- */
+  /* ---- État de scroll (nav + bouton retour) — throttlé via rAF, écriture DOM seulement au changement d'état ---- */
   const nav = document.getElementById('nav');
-  const onScroll = () => {
-    if (window.scrollY > 40) nav.classList.add('scrolled');
-    else nav.classList.remove('scrolled');
+  const toTopBtn = document.getElementById('toTop');
+  let lastScrolled = false, lastShow = false, ticking = false;
+  const updateScrollState = () => {
+    const y = window.scrollY;
+    const scrolled = y > 40;
+    if (scrolled !== lastScrolled) { lastScrolled = scrolled; nav.classList.toggle('scrolled', scrolled); }
+    if (toTopBtn) {
+      const show = y > 600;
+      if (show !== lastShow) { lastShow = show; toTopBtn.classList.toggle('show', show); }
+    }
+    ticking = false;
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  window.addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; window.requestAnimationFrame(updateScrollState); }
+  }, { passive: true });
+  updateScrollState();
 
   /* ---- Mobile drawer ---- */
   const burger = document.getElementById('burger');
@@ -130,9 +140,7 @@
   /* ---- Bouton retour en haut ---- */
   const toTop = document.getElementById('toTop');
   if (toTop) {
-    const toggle = () => toTop.classList.toggle('show', window.scrollY > 600);
-    window.addEventListener('scroll', toggle, { passive: true });
-    toggle();
+    // l'affichage est géré par updateScrollState (rAF) ; ici uniquement le clic
     toTop.addEventListener('click', () =>
       window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' })
     );
