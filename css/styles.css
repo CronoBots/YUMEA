@@ -180,6 +180,8 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .institut__frame{max-width:1000px;margin:clamp(2rem,4vw,3rem) auto 0;border-radius:20px;overflow:hidden;border:4px solid #fff;box-shadow:0 34px 70px -34px rgba(18,58,43,.55)}
 .institut__details{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(.7rem,1.5vw,1rem);max-width:900px;margin:clamp(1.4rem,3vw,1.8rem) auto 0}
 .institut__details .photo{aspect-ratio:4/5}
+.institut__cabine{max-width:460px;aspect-ratio:4/3;margin:clamp(1.4rem,3vw,1.8rem) auto 0}
+.headspa__photo{max-width:340px;aspect-ratio:5/7;margin:clamp(1.8rem,4vw,2.4rem) auto 0}
 .institut__frame img{width:100%;height:auto;display:block}
 .institut__cta{margin-top:clamp(1.6rem,3vw,2.2rem)}
 
