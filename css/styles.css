@@ -241,7 +241,11 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .enfants__media .photo{aspect-ratio:1;max-width:460px;margin:0 auto}
 .enfants__gallery{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;max-width:460px;margin:0 auto}
 .enfants__gallery .photo{aspect-ratio:3/4;max-width:none}
-.enfants__quote{font-family:var(--font-serif);font-style:italic;font-size:1.4rem;color:var(--emerald);margin-top:1.4rem;max-width:420px;margin-left:auto;margin-right:auto}
+.enfants__quote{font-family:var(--font-serif);font-style:italic;font-size:1.4rem;color:var(--emerald);margin-top:clamp(2rem,4vw,2.6rem);max-width:460px;margin-left:auto;margin-right:auto}
+.enfants__lead{max-width:600px;aspect-ratio:4/3;margin:clamp(2rem,4vw,3.2rem) auto 0}
+.enfants__close{max-width:420px;aspect-ratio:3/4;margin:clamp(2rem,4vw,3.2rem) auto 0}
+.enfants__points{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.6rem,3vw,2.6rem);margin-top:clamp(2.5rem,5vw,3.4rem)}
+.enfants__points .enfants__item{flex-direction:column;align-items:center;text-align:center;gap:.9rem}
 
 /* ---------- BIENFAITS ---------- */
 .benefits{background:var(--cream-2)}
@@ -447,7 +451,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .split__body p{max-width:none}
   .pills{justify-content:center}
   .ornament--left{justify-content:center;margin:1.2rem auto}
-  .enfants__item{text-align:left}
+  .enfants__points{grid-template-columns:1fr;max-width:26rem;margin-left:auto;margin-right:auto}
   .expertise{text-align:left;max-width:30rem;margin-left:auto;margin-right:auto}
   .carousel__nav{display:none}
   .carousel{padding:0 1rem}
