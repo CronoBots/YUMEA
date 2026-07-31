@@ -226,6 +226,9 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .pills{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.8rem}
 .pills li{font-family:var(--font-sans);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--emerald);border:1px solid var(--gold-400);background:rgba(205,170,92,.08);padding:.5em 1em;border-radius:999px}
 .pills--center{justify-content:center}
+.expertise{list-style:none;margin-top:1.9rem;display:grid;gap:.9rem}
+.expertise li{font-family:var(--font-body);font-size:.95rem;color:var(--ink-soft);line-height:1.5;padding-left:1.1rem;border-left:2px solid var(--gold-400)}
+.expertise__term{display:block;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--emerald);font-weight:500;margin-bottom:.2rem}
 
 /* ---------- HEAD SPA ENFANT ---------- */
 .enfants{background:var(--cream-1)}
@@ -443,6 +446,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .pills{justify-content:center}
   .ornament--left{justify-content:center;margin:1.2rem auto}
   .enfants__item{text-align:left}
+  .expertise{text-align:left;max-width:30rem;margin-left:auto;margin-right:auto}
   .carousel__nav{display:none}
   .carousel{padding:0 1rem}
   /* Perf mobile : alléger la peinture pour un scroll fluide */
