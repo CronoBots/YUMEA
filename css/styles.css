@@ -222,6 +222,8 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .photo--portrait{aspect-ratio:4/5;max-width:440px;margin:0 auto}
 .partage__photo{aspect-ratio:3/4;max-width:440px;margin:0 auto}
 .partage__note{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--gold-700);margin-top:1.6rem}
+.cadeaux__cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:clamp(2.5rem,5vw,3.2rem)}
+.cadeaux .note{margin-top:1.3rem}
 .photo__caption{text-align:center;margin-top:1.2rem;font-family:var(--font-serif);font-size:1.5rem;color:var(--emerald)}
 .photo__caption .script{font-size:2rem;color:var(--gold-600)}
 .photo__caption small{display:block;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-600);margin-top:.4rem}
