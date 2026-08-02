@@ -227,6 +227,13 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .partage__photo{aspect-ratio:3/4;max-width:440px;margin:0 auto}
 .partage__note{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--gold-700);margin-top:1.6rem}
 .cadeaux__photo{max-width:340px;aspect-ratio:9/16;margin:clamp(2rem,4vw,2.6rem) auto 0}
+.frederic__quote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.2rem,2.6vw,1.65rem);color:var(--emerald);max-width:760px;margin:clamp(2.5rem,5vw,3.5rem) auto 0;line-height:1.5}
+.frederic__wide{max-width:820px;aspect-ratio:4/3;margin:clamp(2.2rem,4vw,3rem) auto 0}
+.frederic__offer{max-width:640px;margin:clamp(2.2rem,4vw,3rem) auto 0;background:#fff;border:1px solid var(--cream-3);border-radius:18px;padding:clamp(1.6rem,3vw,2.2rem);box-shadow:0 20px 45px -32px rgba(18,58,43,.35)}
+.frederic__offer-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.3rem;padding-bottom:1.2rem;border-bottom:1px solid var(--cream-3)}
+.frederic__offer-head h3{font-family:var(--font-serif);font-weight:600;font-size:1.7rem;color:var(--emerald)}
+.frederic__offer .note{margin-top:1.3rem;text-align:left}
+.frederic__book{margin-top:clamp(2rem,4vw,2.6rem)}
 .cadeaux__cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:clamp(2.5rem,5vw,3.2rem)}
 .cadeaux .note{margin-top:1.3rem}
 .photo__caption{text-align:center;margin-top:1.2rem;font-family:var(--font-serif);font-size:1.5rem;color:var(--emerald)}
