@@ -177,10 +177,12 @@ section[id]:not(#hero){scroll-margin-top:84px}
 /* ---------- L'INSTITUT (photo encadrée, entièrement visible) ---------- */
 .institut{background:var(--cream-2)}
 .brand--hair .brand__media > .photo{aspect-ratio:2/3;max-width:300px}
-.institut__mosaic{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.6rem,1.4vw,1rem);max-width:1000px;margin:clamp(2rem,4vw,3rem) auto 0}
+.institut__mosaic{display:grid;grid-template-columns:repeat(6,1fr);grid-template-areas:"fac fac fac fac cab cab" "fac fac fac fac dif let" "fac fac fac fac mir sus";gap:clamp(.5rem,1.2vw,.9rem);max-width:1040px;margin:clamp(2rem,4vw,3rem) auto 0}
 .institut__tile{aspect-ratio:1;margin:0;border-radius:16px;overflow:hidden;border:4px solid #fff;box-shadow:0 24px 50px -30px rgba(18,58,43,.5)}
 .institut__tile img{width:100%;height:100%;object-fit:cover;display:block}
-.institut__tile--facade{grid-column:span 2;grid-row:span 2}
+.institut__tile--facade{grid-area:fac;aspect-ratio:auto}
+.i-cab{grid-area:cab;aspect-ratio:2/1}
+.i-dif{grid-area:dif}.i-let{grid-area:let}.i-mir{grid-area:mir}.i-sus{grid-area:sus}
 .headspa__photo{max-width:340px;aspect-ratio:5/7;margin:clamp(1.8rem,4vw,2.4rem) auto 0}
 .institut__cta{margin-top:clamp(1.6rem,3vw,2.2rem)}
 
@@ -225,7 +227,12 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .photo--portrait{aspect-ratio:4/5;max-width:440px;margin:0 auto}
 .partage__photo{aspect-ratio:3/4;max-width:440px;margin:0 auto}
 .partage__note{font-family:var(--font-serif);font-style:italic;font-size:1.15rem;color:var(--gold-700);margin-top:1.6rem}
-.cadeaux__photo{max-width:340px;aspect-ratio:9/16;margin:clamp(2rem,4vw,2.6rem) auto 0}
+.cadeaux__layout{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(1.2rem,2.6vw,2rem);align-items:stretch;max-width:900px;margin:clamp(1.8rem,3.5vw,2.6rem) auto 0}
+.cadeaux__photo{max-width:none;aspect-ratio:9/16;margin:0}
+.cadeaux__cards{display:grid;grid-template-rows:repeat(3,1fr);gap:clamp(.9rem,1.8vw,1.3rem)}
+.cadeaux__cards .duo__card{margin:0;display:flex;flex-direction:column;justify-content:center;text-align:left;padding:clamp(1.4rem,2.4vw,2rem) clamp(1.5rem,2.6vw,2.2rem)}
+.cadeaux__cards .duo__card .badge{margin:0 0 1rem}
+.frederic .split{align-items:start}
 .frederic__quote{font-family:var(--font-serif);font-style:italic;font-size:clamp(1.2rem,2.6vw,1.65rem);color:var(--emerald);max-width:760px;margin:clamp(2.5rem,5vw,3.5rem) auto 0;line-height:1.5}
 .frederic__duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.8rem,2vw,1.2rem);max-width:900px;margin:clamp(2.2rem,4vw,3rem) auto 0}
 .frederic__duo .photo{aspect-ratio:4/3}
@@ -235,7 +242,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .frederic__offer .note{margin-top:1.3rem;text-align:left}
 .frederic__book{margin-top:clamp(2rem,4vw,2.6rem)}
 .cadeaux__cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:clamp(2.5rem,5vw,3.2rem)}
-.cadeaux .note{margin-top:1.3rem}
+.cadeaux .note{margin:1.3rem auto 0;text-align:center}
 .photo__caption{text-align:center;margin-top:1.2rem;font-family:var(--font-serif);font-size:1.5rem;color:var(--emerald)}
 .photo__caption .script{font-size:2rem;color:var(--gold-600)}
 .photo__caption small{display:block;font-family:var(--font-sans);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-600);margin-top:.4rem}
@@ -395,7 +402,8 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .gammes li div{color:var(--ink-soft);font-size:1rem;line-height:1.5}
 
 /* ---------- AVIS (façon Trustindex) ---------- */
-.avis{background:var(--cream-1)}
+.avis{background:var(--cream-1);padding-bottom:clamp(2.2rem,4.5vw,3.5rem)}
+.contact{padding-top:clamp(3rem,6vw,5rem)}
 .r-stars{color:#f5a623;letter-spacing:2px;font-size:1rem;line-height:1}
 .r-stars--lg{font-size:1.4rem;letter-spacing:3px}
 
@@ -472,9 +480,16 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .split__body p{max-width:none}
   .pills{justify-content:center}
   .ornament--left{justify-content:center;margin:1.2rem auto}
-  .institut__mosaic{grid-template-columns:1fr 1fr}
-  .institut__tile--facade{grid-column:1/-1;grid-row:auto;aspect-ratio:4/3}
+  .institut__mosaic{grid-template-columns:1fr 1fr;grid-template-areas:"fac fac" "cab dif" "let mir" "sus sus"}
+  .institut__tile--facade{aspect-ratio:4/3}
+  .i-cab{aspect-ratio:1}
+  .i-sus{aspect-ratio:2/1}
   .frederic__duo{grid-template-columns:1fr}
+  .cadeaux__layout{grid-template-columns:1fr;gap:1.4rem}
+  .cadeaux__photo{max-width:340px;margin:0 auto}
+  .cadeaux__cards{grid-template-rows:repeat(3,auto)}
+  .cadeaux__cards .duo__card{text-align:center}
+  .cadeaux__cards .duo__card .badge{margin:0 auto 1rem}
   .enfants__points{grid-template-columns:1fr;max-width:26rem;margin-left:auto;margin-right:auto}
   .expertise{text-align:left;max-width:30rem;margin-left:auto;margin-right:auto}
   .carousel__nav{display:none}
