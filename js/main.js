@@ -164,15 +164,30 @@
       statusEl.classList.toggle('is-open', openNow);
     }
 
-    // Build time slots 09:00 → 17:30
+    // Créneaux adaptés à la durée du soin (institut ouvert 09:00 → 18:00)
     const timeSel = document.getElementById('f-time');
-    for (let m = 9 * 60; m <= 17 * 60 + 30; m += 30) {
-      const hh = String(Math.floor(m / 60)).padStart(2, '0');
-      const mm = String(m % 60).padStart(2, '0');
-      const o = document.createElement('option');
-      o.value = o.textContent = `${hh}:${mm}`;
-      timeSel.appendChild(o);
-    }
+    const rituelSel = document.getElementById('f-rituel');
+    const OPEN = 9 * 60, CLOSE = 18 * 60;
+    const buildSlots = (durationMin) => {
+      const dur = durationMin > 0 ? durationMin : 60;
+      const lastStart = CLOSE - dur; // le soin doit se terminer avant la fermeture
+      const prev = timeSel.value;
+      timeSel.innerHTML = '<option value="" disabled selected>Heure…</option>';
+      for (let m = OPEN; m <= lastStart; m += 30) {
+        const hh = String(Math.floor(m / 60)).padStart(2, '0');
+        const mm = String(m % 60).padStart(2, '0');
+        const o = document.createElement('option');
+        o.value = o.textContent = `${hh}:${mm}`;
+        if (o.value === prev) o.selected = true;
+        timeSel.appendChild(o);
+      }
+    };
+    const selectedDuration = () => {
+      const opt = rituelSel.selectedOptions[0];
+      return opt ? parseInt(opt.dataset.dur || '0', 10) : 0;
+    };
+    rituelSel.addEventListener('change', () => buildSlots(selectedDuration()));
+    buildSlots(60);
 
     // Date: min today, block weekends
     const dateEl = document.getElementById('f-date');
@@ -225,14 +240,14 @@
         'mailto:contact@yumea-wellness.be?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(buildText());
     });
 
-    // Pre-select ritual when arriving from a ritual card
+    // Pre-select ritual when arriving from a ritual card + adapte les créneaux
     document.querySelectorAll('[data-rituel]').forEach((a) => {
       a.addEventListener('click', () => {
-        const sel = document.getElementById('f-rituel');
         const key = a.dataset.rituel.toLowerCase();
-        Array.from(sel.options).forEach((o) => {
-          if (o.textContent.toLowerCase().includes(key)) sel.value = o.value;
+        Array.from(rituelSel.options).forEach((o) => {
+          if (o.textContent.toLowerCase().includes(key)) rituelSel.value = o.value;
         });
+        buildSlots(selectedDuration());
       });
     });
   }

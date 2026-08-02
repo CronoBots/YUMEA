@@ -29,7 +29,7 @@
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/eb-garamond-400.woff2" crossorigin />
 
   <link rel="stylesheet" href="css/fonts.css?v=1" />
-  <link rel="stylesheet" href="css/styles.css?v=21" />
+  <link rel="stylesheet" href="css/styles.css?v=22" />
 
   <script type="application/ld+json">
   {
@@ -293,20 +293,16 @@
         <p class="lede reveal">Un moment rien qu'à vous, dans un cadre pensé pour le lâcher-prise.</p>
       </div>
       <div class="container">
-        <figure class="institut__frame reveal">
-          <img src="assets/institut-nuit.jpg" alt="La façade illuminée de l'institut YUMÉA Wellness à la tombée de la nuit, à Flémalle" width="1448" height="1086" loading="lazy" decoding="async" />
-        </figure>
-      </div>
-
-      <div class="container">
-        <div class="photo institut__cabine reveal"><img src="assets/institut-cabine.webp" alt="La cabine de soin cocooning de l'institut YUMÉA Wellness" width="451" height="338" loading="lazy" decoding="async" /></div>
-      </div>
-
-      <div class="container institut__details reveal">
-        <div class="photo"><img src="assets/institut-diffuseur.webp" alt="Diffuseur de parfum YUMÉA Wellness dans l'institut" width="406" height="508" loading="lazy" decoding="async" /></div>
-        <div class="photo"><img src="assets/institut-lettres.webp" alt="Lettres YUMÉA en bois posées sur une étagère de l'institut" width="325" height="406" loading="lazy" decoding="async" /></div>
-        <div class="photo"><img src="assets/institut-miroir.webp" alt="Miroir organique décoratif de l'institut YUMÉA Wellness" width="325" height="406" loading="lazy" decoding="async" /></div>
-        <div class="photo"><img src="assets/institut-suspension.webp" alt="Suspension dorée et plantes dans l'institut YUMÉA Wellness" width="542" height="677" loading="lazy" decoding="async" /></div>
+        <div class="institut__mosaic reveal">
+          <figure class="institut__tile institut__tile--facade">
+            <img src="assets/institut-nuit.jpg" alt="La façade illuminée de l'institut YUMÉA Wellness à la tombée de la nuit, à Flémalle" width="1448" height="1086" loading="lazy" decoding="async" />
+          </figure>
+          <figure class="institut__tile"><img src="assets/institut-cabine.webp" alt="La cabine de soin cocooning de l'institut YUMÉA Wellness" width="451" height="338" loading="lazy" decoding="async" /></figure>
+          <figure class="institut__tile"><img src="assets/institut-diffuseur.webp" alt="Diffuseur de parfum YUMÉA Wellness dans l'institut" width="406" height="508" loading="lazy" decoding="async" /></figure>
+          <figure class="institut__tile"><img src="assets/institut-lettres.webp" alt="Lettres YUMÉA en bois posées sur une étagère de l'institut" width="325" height="406" loading="lazy" decoding="async" /></figure>
+          <figure class="institut__tile"><img src="assets/institut-miroir.webp" alt="Miroir organique décoratif de l'institut YUMÉA Wellness" width="325" height="406" loading="lazy" decoding="async" /></figure>
+          <figure class="institut__tile"><img src="assets/institut-suspension.webp" alt="Suspension dorée et plantes dans l'institut YUMÉA Wellness" width="542" height="677" loading="lazy" decoding="async" /></figure>
+        </div>
       </div>
 
       <div class="container center institut__cta reveal">
@@ -551,11 +547,12 @@
             <label for="f-rituel">Rituel souhaité</label>
             <select id="f-rituel" required>
               <option value="" disabled selected>Choisir un rituel…</option>
-              <option>Rituel SAKURA — 50 min · 80€</option>
-              <option>Rituel ATSU — 90 min · 130€</option>
-              <option>Rituel enfant</option>
-              <option>Head Spa / soin sur-mesure</option>
-              <option>Je ne sais pas encore</option>
+              <option data-dur="50">Rituel SAKURA — 50 min · 80€</option>
+              <option data-dur="90">Rituel ATSU — 90 min · 130€</option>
+              <option data-dur="60">Rituel enfant — dès 40€</option>
+              <option data-dur="60">Soin Shiatsu (Frédéric) — 60 min · 60€</option>
+              <option data-dur="90">Head Spa / soin sur-mesure</option>
+              <option data-dur="60">Je ne sais pas encore</option>
             </select>
           </div>
           <div class="field-row">
@@ -733,6 +730,6 @@
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
   </button>
 
-  <script src="js/main.js?v=3" defer></script>
+  <script src="js/main.js?v=4" defer></script>
 </body>
 </html>
