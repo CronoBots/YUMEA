@@ -224,7 +224,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
 
 /* ---------- FONDATRICE ---------- */
 .fondatrice{background:var(--cream-2)}
-.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
 .split__body .display{margin-top:.3rem}
 .split__body p{color:var(--ink-soft);margin-top:1.1rem;max-width:44ch}
 .photo{border-radius:20px;overflow:hidden;border:4px solid #fff;box-shadow:0 30px 60px -30px rgba(18,58,43,.55)}
@@ -456,12 +456,12 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .to-top{
   position:fixed;right:clamp(1rem,3vw,2rem);bottom:clamp(1rem,3vw,2rem);z-index:45;
   width:50px;height:50px;border-radius:50%;cursor:pointer;
-  border:1px solid rgba(205,170,92,.45);background:rgba(18,58,43,.8);color:var(--gold-300);
-  display:grid;place-items:center;box-shadow:0 14px 30px -14px rgba(12,42,31,.55);
+  border:1px solid rgba(205,170,92,.5);background:var(--emerald);color:var(--gold-300);
+  display:grid;place-items:center;box-shadow:0 14px 34px -12px rgba(12,42,31,.7);
   opacity:0;visibility:hidden;transform:translateY(16px);
   transition:opacity .4s var(--ease),transform .4s var(--ease),background .3s,color .3s,visibility .4s;
 }
-.to-top.show{opacity:.65;visibility:visible;transform:none}
+.to-top.show{opacity:.96;visibility:visible;transform:none}
 .to-top:hover,.to-top:focus-visible{opacity:1;background:var(--emerald-950);color:var(--gold-400);transform:translateY(-3px)}
 .to-top svg{width:44%;height:44%}
 @media (max-width:560px){.to-top{width:44px;height:44px}}
@@ -503,7 +503,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
   .i-sus{aspect-ratio:2/1}
   .frederic__duo{grid-template-columns:1fr}
   .cadeaux__layout{grid-template-columns:1fr;gap:1.4rem}
-  .cadeaux__photo{max-width:340px;margin:0 auto;aspect-ratio:3/4}
+  .cadeaux__photo{width:min(20rem,100%);max-width:none;margin:0 auto;aspect-ratio:3/4}
   .cadeaux__cards .duo__card{text-align:center}
   .cadeaux__cards .duo__card .badge{margin:0 auto 1rem}
   .enfants__points{grid-template-columns:1fr;max-width:26rem;margin-left:auto;margin-right:auto}
