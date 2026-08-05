@@ -13,7 +13,7 @@
   const updateScrollState = () => {
     const y = window.scrollY;
     const scrolled = y > 40;
-    if (scrolled !== lastScrolled) { lastScrolled = scrolled; nav.classList.toggle('scrolled', scrolled); }
+    if (scrolled !== lastScrolled) { lastScrolled = scrolled; if (nav) nav.classList.toggle('scrolled', scrolled); }
     if (toTopBtn) {
       const show = y > 600;
       if (show !== lastShow) { lastShow = show; toTopBtn.classList.toggle('show', show); }
@@ -28,18 +28,20 @@
   /* ---- Mobile drawer ---- */
   const burger = document.getElementById('burger');
   const drawer = document.getElementById('drawer');
-  const toggleDrawer = (open) => {
-    const isOpen = open ?? !drawer.classList.contains('open');
-    drawer.classList.toggle('open', isOpen);
-    burger.classList.toggle('open', isOpen);
-    burger.setAttribute('aria-expanded', String(isOpen));
-    drawer.setAttribute('aria-hidden', String(!isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  };
-  burger.addEventListener('click', () => toggleDrawer());
-  drawer.querySelectorAll('a').forEach((a) =>
-    a.addEventListener('click', () => toggleDrawer(false))
-  );
+  if (burger && drawer) {
+    const toggleDrawer = (open) => {
+      const isOpen = open ?? !drawer.classList.contains('open');
+      drawer.classList.toggle('open', isOpen);
+      burger.classList.toggle('open', isOpen);
+      burger.setAttribute('aria-expanded', String(isOpen));
+      drawer.setAttribute('aria-hidden', String(!isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    };
+    burger.addEventListener('click', () => toggleDrawer());
+    drawer.querySelectorAll('a').forEach((a) =>
+      a.addEventListener('click', () => toggleDrawer(false))
+    );
+  }
 
   /* ---- Smooth scroll on anchor links (JS only, so touch scrolling stays native) ---- */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
@@ -76,8 +78,8 @@
   }
 
   /* ---- Falling sakura petals (light, decorative) ---- */
-  if (!prefersReduced) {
-    const layer = document.querySelector('.petals');
+  const layer = document.querySelector('.petals');
+  if (!prefersReduced && layer) {
     const spawn = () => {
       const petal = document.createElement('span');
       petal.className = 'petal';
@@ -253,6 +255,60 @@
   }
 
   /* ---- Current year ---- */
-  const y = document.getElementById('year');
-  if (y) y.textContent = String(new Date().getFullYear());
+  document.querySelectorAll('#year, .js-year').forEach((el) => {
+    el.textContent = String(new Date().getFullYear());
+  });
+
+  /* ---- Consentement cookies + carte Google Maps différée (RGPD) ---- */
+  (function cookies() {
+    const KEY = 'yumea-cookie-consent'; // 'accepted' | 'refused'
+    const banner = document.getElementById('cookieBanner');
+    const mapFrame = document.querySelector('.map iframe[data-src]');
+    const mapConsent = document.getElementById('mapConsent');
+
+    const getChoice = () => {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    };
+    const setChoice = (v) => {
+      try { localStorage.setItem(KEY, v); } catch (e) {}
+    };
+
+    const loadMap = () => {
+      if (mapFrame && !mapFrame.src && mapFrame.dataset.src) {
+        mapFrame.src = mapFrame.dataset.src;
+      }
+      if (mapConsent) mapConsent.hidden = true;
+    };
+    const showMapConsent = () => {
+      if (mapConsent) mapConsent.hidden = false;
+    };
+
+    const apply = (choice) => {
+      if (choice === 'accepted') loadMap();
+      else showMapConsent();
+    };
+
+    const hideBanner = () => banner && banner.classList.remove('show');
+    const showBanner = () => banner && banner.classList.add('show');
+
+    // État initial
+    const initial = getChoice();
+    apply(initial);
+    if (!initial) showBanner();
+
+    // Boutons du bandeau
+    const btnAccept = document.getElementById('cookieAccept');
+    const btnRefuse = document.getElementById('cookieRefuse');
+    if (btnAccept) btnAccept.addEventListener('click', () => { setChoice('accepted'); apply('accepted'); hideBanner(); });
+    if (btnRefuse) btnRefuse.addEventListener('click', () => { setChoice('refused'); apply('refused'); hideBanner(); });
+
+    // Bouton « Afficher la carte » dans la zone carte
+    const mapBtn = document.getElementById('mapConsentBtn');
+    if (mapBtn) mapBtn.addEventListener('click', () => { setChoice('accepted'); loadMap(); hideBanner(); });
+
+    // Lien « Gérer les cookies » (pied de page)
+    document.querySelectorAll('[data-cookie-prefs]').forEach((el) =>
+      el.addEventListener('click', (e) => { e.preventDefault(); showBanner(); })
+    );
+  })();
 })();
