@@ -292,8 +292,11 @@ section[id]:not(#hero){scroll-margin-top:84px}
 .duo__card{padding:2.6rem;border-radius:18px;background:#fff;border:1px solid var(--cream-3);box-shadow:0 20px 45px -32px rgba(18,58,43,.35);text-align:center}
 .duo__card .badge{margin:0 auto 1.2rem}
 .duo__card h3{font-family:var(--font-serif);font-weight:600;font-size:1.7rem;line-height:1.2;color:var(--emerald);margin-bottom:.7rem}
-/* Titres à hauteur égale (2 lignes) pour que les paragraphes démarrent au même niveau */
-@media (min-width:901px){.personnalise .duo__card h3{min-height:2.4em;display:flex;align-items:flex-start;justify-content:center}}
+/* Personnalise : titres tenant sur une seule ligne → tous alignés, paragraphes homogènes */
+.personnalise .duo__card{padding:clamp(1.8rem,3vw,2.1rem)}
+.personnalise .duo__card h3{font-size:1.35rem;white-space:nowrap}
+/* Sous 1120px, 3 colonnes deviennent trop étroites : on empile en une colonne large */
+@media (max-width:1120px){.personnalise .duo{grid-template-columns:1fr;max-width:34rem;margin-left:auto;margin-right:auto}.personnalise .duo__card h3{white-space:normal}}
 .duo__card p{color:var(--ink-soft);font-size:1.02rem}
 
 /* ---------- UNIVERS / CARROUSEL ---------- */
@@ -545,6 +548,7 @@ section[id]:not(#hero){scroll-margin-top:84px}
 @media (max-width:520px){.cookie__actions{flex-direction:column}}
 
 .map__consent{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;text-align:center;padding:1.5rem;background:linear-gradient(160deg,var(--cream-1),var(--cream-2))}
+.map__consent[hidden]{display:none}
 .map__consent p{max-width:34ch;font-size:.92rem;line-height:1.55;color:var(--ink-soft)}
 .map__consent svg{width:34px;height:34px;color:var(--gold-600)}
 
