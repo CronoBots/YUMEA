@@ -2,8 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yumea-wellness.be/</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yumea-wellness.be/mentions-legales.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://yumea-wellness.be/conditions-generales.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://yumea-wellness.be/politique-confidentialite.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://yumea-wellness.be/politique-cookies.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
