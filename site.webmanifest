@@ -1,0 +1,15 @@
+{
+  "name": "YUMÉA Wellness — Head Spa japonais à Flémalle",
+  "short_name": "YUMÉA Wellness",
+  "description": "Institut dédié au Head Spa japonais, au bien-être et aux soins du cuir chevelu à Flémalle.",
+  "lang": "fr-BE",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5eee0",
+  "theme_color": "#f2ebdc",
+  "icons": [
+    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/assets/logo.jpeg", "sizes": "512x512", "type": "image/jpeg", "purpose": "any" }
+  ]
+}
